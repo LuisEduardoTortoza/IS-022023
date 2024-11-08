@@ -15,3 +15,5 @@ Desde aqui solo hay parte de una plantilla del link disponile en el reto 2 en ca
 ### General Info
 ***
 Write down the general informations of your project.
+
+Modificación desde GitHub, se agrego esta linea
