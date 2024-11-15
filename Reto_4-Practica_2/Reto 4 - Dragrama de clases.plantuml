@@ -1,0 +1,43 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+Class Persona{
+- int : teléfono
+- string : nombre
+- string : dirección
+}
+
+Class Jugador{
+- int : número
+- string : posición
+- bool : capitan
+}
+
+Class Entrenador{
+- string : nivel_acreditación
+- int : años_experiencia
+}
+
+Class Equipo{
+- string : nombre
+- int : registro
+- Jugador : jugador
+- Entreador : entrenador
+}
+
+Class Juego{
+- string : localidad
+- int : puntuación_equipo_1
+- int : puntuación_equipo_2
+- Equipo : equipo
+}
+
+
+Persona <|-- Jugador
+Persona <|-- Entrenador
+Equipo "1" *-- "6 - 20" Jugador
+Juego "1" *-- "2" Equipo 
+Equipo "*" o-- "1" Entrenador
+
+@enduml

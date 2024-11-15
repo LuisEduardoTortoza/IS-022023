@@ -1,0 +1,104 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+object Equipo_1 {
+nombre = Venezuela
+registro = 15208
+}
+
+object Equipo_2 {
+nombre = Colombia
+registro = 13078
+}
+
+object Jugador_1 {
+teléfono = 04120005577
+nombre = José
+dirección = El Hatillo
+número = 7
+posición = delantero
+capitan = true
+}
+
+object Jugador_2 {
+teléfono = 04269007700
+nombre = Ángel
+dirección = La Candelaria
+número = 15
+posición = zaguero izquierdo
+capitan = false
+}
+
+object Jugador_3 {
+teléfono = 04240005500
+nombre = Enrique
+dirección = Los Teques
+número = 9
+posición = zaguero derecho
+capitan = false
+}
+
+object Jugador_a {
+teléfono = 04120009845
+nombre = Alvaro
+dirección = Cartagena
+número = 7
+posición = delantero
+capitan = true
+}
+
+object Jugador_b {
+teléfono = 04269009801
+nombre = Carlos
+dirección = Medellín
+número = 15
+posición = zaguero izquierdo
+capitan = false
+}
+
+object Jugador_c {
+teléfono = 04240008823
+nombre = Leonardo
+dirección = Bogotá
+número = 9
+posición = zaguero derecho
+capitan = false
+}
+
+object Entrenador_1{
+teléfono = 04240070592
+nombre = Eduardo
+dirección = La California
+nivel_acreditación = 4
+años_experiencia = 30
+}
+
+object Entrenador_2{
+teléfono = 04240070831
+nombre = Daniel
+dirección = Cartagena 
+nivel_acreditación = 3
+años_experiencia = 20
+}
+
+Object Juego {
+localidad = Chile
+puntuación_equipo_1 = 25
+puntuación_equipo_2 = 15
+}
+
+Equipo_1 *-- Jugador_1 : Es parte de
+Equipo_1 *-- Jugador_2 : Es parte de
+Equipo_1 *-- Jugador_3 : Es parte de
+Equipo_1 o-- Entrenador_1 : Entrena a
+
+Equipo_2 *-- Jugador_a : Es parte de
+Equipo_2 *-- Jugador_b : Es parte de
+Equipo_2 *-- Jugador_c : Es parte de
+Equipo_2 o-- Entrenador_2 : Entrena a
+
+Juego *-- Equipo_1
+Juego *-- Equipo_2
+
+@enduml
