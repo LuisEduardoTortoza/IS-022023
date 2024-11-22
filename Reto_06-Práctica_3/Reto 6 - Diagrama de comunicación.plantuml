@@ -1,0 +1,20 @@
+@startuml
+skinparam sequenceMessageAlign direction
+autonumber
+
+Actor Usuario
+entity Registro
+entity Catalogo_Productos
+entity Venta
+entity lineas_Venta
+
+Usuario -> Registro : crearNuevaVenta()
+Usuario -> Registro : introducirArticulo(ArticuloID id, int cant)
+Registro -> Catalogo_Productos : getEspecificacion(id)
+Catalogo_Productos --> Registro : EspecificacionProducto espec
+Registro -> Venta : crearLineaVenta(espec, cant)
+Venta -> lineas_Venta : new LineaVenta(espec, cant)
+lineas_Venta -> lineas_Venta :  lineasVenta.añadir
+Usuario -> Registro : finalizarVenta
+
+@enduml

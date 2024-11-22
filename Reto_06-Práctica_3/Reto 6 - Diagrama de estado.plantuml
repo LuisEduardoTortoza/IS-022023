@@ -1,0 +1,14 @@
+@startuml
+
+[*] --> Pedido_Colocado : Encargar Producto
+Pedido_Colocado --> Pedido_Validado : Validar Pedido
+Pedido_Validado --> Pedido_Pagado : Cobrar Pago
+Pedido_Colocado --> Pedido_Pagado : Pagado por adelantado
+Pedido_Pagado --> Pedido_Obtenido : Obtener pedido
+Pedido_Obtenido --> Pedido_Enviado_Urgente : Envio urgente
+Pedido_Obtenido --> Pedido_Enviado_Ordinario : Envio ordinario
+Pedido_Enviado_Urgente --> Pedido_Realizado : Finalizar Pedido
+Pedido_Enviado_Ordinario --> Pedido_Realizado : Finalizar Pedido
+Pedido_Realizado --> [*]
+
+@enduml
