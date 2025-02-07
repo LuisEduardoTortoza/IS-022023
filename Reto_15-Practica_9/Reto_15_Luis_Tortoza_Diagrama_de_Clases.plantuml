@@ -1,0 +1,53 @@
+@startuml class diagram
+
+' Clases
+
+class TurnOnDevices {
+ +main(String[] args)
+ +turnOnDevice(Connectable device)
+}
+
+interface Connectable <<Interface>> {
+ + void: turnOn()
+ + void: turnOff()
+ + boolean: isOn()
+}
+
+class Lamp {
+ -boolean on
+ + void: turnOn()
+ + void: turnOff()
+ + boolean: isOn()
+}
+
+class Computer {
+ -boolean on
+ + void: turnOn()
+ + void: turnOff()
+ + boolean: isOn()
+}
+
+class CoffeMaker {
+ -boolean off
+ + void: on()
+ + void: off()
+ + boolean: isOff()
+}
+
+class CoffeAdapter {
+ -CoffeMaker coffeMaker
+ + void: turnOn()
+ + void: turnOff()
+ + boolean: isOn()
+}
+
+	
+' Relaciones
+
+TurnOnDevices --> Connectable
+Connectable <|.. Lamp
+Connectable <|.. Computer
+Connectable <|.. CoffeAdapter
+CoffeAdapter --> CoffeMaker
+
+@enduml
